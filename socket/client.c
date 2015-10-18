@@ -4,11 +4,15 @@
 #include <sys/types.h> 
 #include <sys/socket.h> 
 #include <netinet/in.h> 
+#include <string.h> 
 
 int main(int argc, char **argv)
 {
     int s, c,  size;
     struct sockaddr_in ser, cli;
+
+    printf("%s CLIENT_NAME FILE_NAME\n", argv[0]);
+    assert(argc == 3);
 
     if((s = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("SOCKET CREATION FAILED");
@@ -26,6 +30,9 @@ int main(int argc, char **argv)
 	return -1;
     }
     puts("Connection established succesfully\n");
-    
+    printf("ARG to be sent : %s\n", argv[1]);
+    send(s, argv[1], strlen(argv[1]), 0);
+    sleep(1);
+    send(s, argv[2], strlen(argv[2]), 0);
     return 0;
 }

@@ -1,0 +1,21 @@
+-> Please create serverlog directory and update it properly.
+   This file already already have it in my home directory.
+   replace new directory path <=> /home/bujji/serverlogs 
+                    line number : 16
+
+-> for copying operation actually i'm using linux cp coommand.
+   When we re working on remote servers, Need to write our own 
+   download (remote copy method)
+                    line number : 60
+
+-> From client side need to pass 2 arguments mandatorily,
+   first argument indicates client name,  second argument 
+   indicates file to be copied.
+   
+-> Tested this program with locally one pc, Please need to test it
+   with a netwrok systems.
+
+-> Make file also avilable for compilation purpose
+    use following command
+    make server 
+    make client
